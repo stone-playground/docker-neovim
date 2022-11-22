@@ -1,4 +1,4 @@
-FROM ubuntu:20.04 AS builder
+FROM ubuntu:22.04 AS builder
 
 LABEL maintainer="AnatoleLucet"
 
@@ -16,7 +16,7 @@ RUN apt update && apt upgrade -y && \
   make CMAKE_INSTALL_PREFIX=/usr/local install && \
   strip /usr/local/bin/nvim
 
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 COPY --from=builder /usr/local /usr/local/
 
 CMD ["/usr/local/bin/nvim"]
