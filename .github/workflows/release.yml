@@ -8,8 +8,6 @@ on:
     paths:
       - "*/Dockerfile"
       - ".github/**"
-  schedule:
-    - cron: "25 5 * * *"
 
 jobs:
   stable:
